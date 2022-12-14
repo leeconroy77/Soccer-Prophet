@@ -1,13 +1,82 @@
 body {
   margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.nav-bar {
+  
+  width: 100%;
+  height: 80px;
+  background-color: rgb(226, 221, 221);
+  border-bottom: 2px solid grey;
+  
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 8%;
+  width: 100%;
+  height: 60%;
+  
+
+  
+}
+
+.form-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  width: 90%;
+  margin-top: 20px;
+  
+}
+
+.team-input {
+  width: 300px;
+}
+
+.formation-input {
+  width: 150px;  
+}
+
+.strategies {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 220px;
+}
+
+.overs {
+  color: rgb(255, 255, 255);
+  background-color: rgb(60, 185, 60);
+  border: 2px solid rgb(92, 91, 91);
+  padding: 4px;
+  border-radius: 4px;
+}
+.second-half {
+  color: rgb(255, 255, 255);
+  background-color: rgb(243, 77, 77);
+  border: 2px solid rgb(87, 87, 87);
+  padding: 4px;
+  border-radius: 4px;
 }
