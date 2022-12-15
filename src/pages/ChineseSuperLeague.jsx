@@ -6,6 +6,17 @@ import '../index.css'
 const ChineseSuperLeague = () => {
 
 
+  const formaton = [
+    {value: "4231", label: "4231"}, {value: "442",label: "442"}, {value: "433", label: "433"}, {value: "451", label: "451"},{value: "352", label: "352"},{value: "343", label: "343"},{value: "532", label: "532"},{value: "541", label: "541"},
+  ];
+
+  const ChineseSuperLeagueTeams = [
+    {value: "Beijing Guoan", label: "Beijing Guoan"}, {value: "Cangzhou",label: "Cangzhou"}, {value: "Changchun Yatai",label: "Changchun Yatai"},{value: "Chengdu Rongcheng", label: "Chengdu Rongcheng"}, {value: "Dalian Pro", label: "Dalian Pro"}, {value: "Guangzhou City",label: "Guangzhou City"}, {value: "Guangzhou FC",label: "Guangzhou FC"}, {value: "Hebei",label: "Hebei"}, {value: "Henan Songshan Longmen",label: "Henan Songshan Longmen"}, {value: "Meizhou Hakka",label: "Meizhou Hakka"}, {value: "Shandong Taishan",label: "Shandong Taishan"}, {value: "Shanghai Port",label: "Shanghai Port"}, {value: "Shanghai Shenhua",label: "Shanghai Shenhua"}, {value: "Shenzhen",label: "Shenzhen"}, {value: "Tianjin Jinmen Tiger",label: "Tianjin Jinmen Tiger"}, {value: "Wuhan FC",label: "Wuhan FC"}, {value: "Wuhan Three Towns",label: "Wuhan Three Towns"}, {value: "Zhejiang Professional",label: "Zhejiang Professional"}
+  ]
+
+
+  // INPUT 1
+
 const [valueHome1, setvalueHome1 ] = useState("");
 const [valueAway1, setvalueAway1 ] = useState("");
 const [homeFormation1, setHomeFormation1 ] = useState("");
@@ -15,17 +26,9 @@ const [totalAvgAwayGoalsFormationStrategy1, setTotalAvgAwayGoalsFormationStrateg
 const [totalFormationSecondHalfGoalsHome1, setTotalFormationSecondHalfGoalsHome1] = useState(0);
 const [totalFormationSecondHalfGoalsAway1, setTotalFormationSecondHalfGoalsAway1 ] = useState(0);
 
+  
 
-
-
-  const formaton = [
-    {value: "4231", label: "4231"}, {value: "442",label: "442"}, {value: "433", label: "433"}, {value: "451", label: "451"},{value: "352", label: "352"},{value: "343", label: "343"},{value: "532", label: "532"},{value: "541", label: "541"},
-  ];
-
-  const ChineseSuperLeagueTeams = [
-    {value: "Beijing Guoan", label: "Beijing Guoan"}, {value: "Cangzhou",label: "Cangzhou"}, {value: "Changchun Yatai",label: "Changchun Yatai"},{value: "Chengdu Rongcheng", label: "Chengdu Rongcheng"}, {value: "Dalian Pro", label: "Dalian Pro"}, {value: "Guangzhou City",label: "Guangzhou City"}, {value: "Guangzhou FC",label: "Guangzhou FC"}, {value: "Hebei",label: "Hebei"}, {value: "Henan Songshan Longmen",label: "Henan Songshan Longmen"}, {value: "Meizhou Hakka",label: "Meizhou Hakka"}, {value: "Shandong Taishan",label: "Shandong Taishan"}, {value: "Shanghai Port",label: "Shanghai Port"}, {value: "Shanghai Shenhua",label: "Shanghai Shenhua"}, {value: "Shenzhen",label: "Shenzhen"}, {value: "Tianjin Jinmen Tiger",label: "Tianjin Jinmen Tiger"}, {value: "Wuhan FC",label: "Wuhan FC"}, {value: "Wuhan Three Towns",label: "Wuhan Three Towns"}, {value: "Zhejiang Professional",label: "Zhejiang Professional"}
-  ]
-
+// INPUT 1
 
   const handleHomeTeamChange1 = (selectedOption) => {
     console.log("handleChangeTeam", selectedOption);
@@ -52,9 +55,15 @@ const [totalFormationSecondHalfGoalsAway1, setTotalFormationSecondHalfGoalsAway1
   let oversStrat1 = false
   let secondHalfStrat1 = false
 
+
+
+
   const handleSubmit = (e) => { 
     e.preventDefault();
 
+
+
+// INPUT 1
 
   const handleClickHomeformation1 = (e) => {
 
@@ -181,7 +190,10 @@ if (isNaN(averageFormationBothTeams1) || isNaN(averageSeondHalfBothTeams1)) {
   secondHalfStrat1 = false
 } else if ((totalFormationSecondHalfGoalsHome1 > 1) && (totalFormationSecondHalfGoalsHome1 < 3.01) && (totalFormationSecondHalfGoalsAway1 < 3.01) && (totalAvgHomeGoalsFormationStrategy1 > 1.99) && (totalAvgAwayGoalsFormationStrategy1 > 0.99)) {
   secondHalfStrat1 = true
+
 }
+
+
 
   
 console.log(secondHalfStrat1);
@@ -190,19 +202,20 @@ console.log(oversStrat1);
 
   return (
     <>
+    <h1 className='h1'>Chinese Super League</h1>
     <form action="submit" onClick={handleSubmit}>
-      <div>
+      <div className='form-container'>
         <div className="form-items" >
-          <Select options={ChineseSuperLeagueTeams} onChange={handleHomeTeamChange1} className="team-input" />
-          <Select options={formaton} onChange={handleHomeFormationChange1} className="formation-input" />
-          
-        
-          <Select options={ChineseSuperLeagueTeams} onChange={handleAwayTeamChange1} className="team-input" />
-          <Select options={formaton} onChange={handleAwayFormationChange1} className="formation-input" />
+          <Select options={ChineseSuperLeagueTeams} onChange={handleHomeTeamChange1} className="team-input" placeholder="Home Team"/>
+          <Select options={formaton} onChange={handleHomeFormationChange1} className="formation-input" placeholder="Formation" />
+          <Select options={ChineseSuperLeagueTeams} onChange={handleAwayTeamChange1} className="team-input" placeholder="Away Team"/>
+          <Select options={formaton} onChange={handleAwayFormationChange1} className="formation-input" placeholder="Formation"/>
           <div className='strategies'>
           {oversStrat1 && <div className='overs'>Over 2.5</div>}
           {secondHalfStrat1 && <div className='second-half'>2nd Half</div>}
           </div>
+        
+        
         </div>
         {/* <div className="form-items" >
           <Select options={ChineseSuperLeagueTeams} onChange={handleHomeTeamChange1} className="team-input"/>
@@ -213,8 +226,11 @@ console.log(oversStrat1);
         </div> */}
         
       </div>
-      <button>submit</button>
+      <button className='button'>Submit</button>
     </form>
+    <div className='scorelines'>
+      Secondhalf Strategy Scorelines = 1-0, 0-1, 2-0, 0-2
+    </div>
     
     </>
   )
