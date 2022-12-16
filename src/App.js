@@ -10,6 +10,7 @@ import IndianISL from "./pages/IndianISL";
 import SpanishLaLiga2 from "./pages/SpanishLaLiga";
 import EnglishPremierLeague from "./pages/EnglishPremierLeague";
 import Navigation from "./components/Navigation";
+import ScottishPremiership from "./pages/ScottishPremiership";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/indianISL" element={<IndianISL />} />
         <Route path="/spanishLaLiga2" element={<SpanishLaLiga2 />} />
         <Route path="/englishPremierLeague" element={<EnglishPremierLeague />} />
+        <Route path="/scottishPremiership" element={<ScottishPremiership />} />
         {/* <Route path="/books" element={< />} /> */}
       </Routes>
       

@@ -113,6 +113,20 @@ body {
   width: 220px;
 }
 
+.first-half-goal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(80, 104, 235);
+  border: 2px solid rgb(87, 87, 87);
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 13px;
+  width: 70px;
+  height: 24px;
+}
+
 .overs {
   display: flex;
   justify-content: center;

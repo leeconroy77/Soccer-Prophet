@@ -24,7 +24,7 @@ const Navigation = () => {
           </Link></li>
           <li><Link to="/indianISL" className='li'>
             <img className='flags'  src='/vectors/indian_flag.svg' alt="" />
-            <p>E4</p>
+            <p>I1</p>
           </Link></li>
           <li><Link to="/italianSerieB" className='li'>
             <img className='flags'  src='/vectors/italian_flag.svg' alt="" />
@@ -33,6 +33,10 @@ const Navigation = () => {
           <li><Link to="/romanianLiga1" className='li'>
             <img className='flags'  src='/vectors/romanian_flag.svg' alt="" />
             <p>R1</p>
+          </Link></li>
+          <li><Link to="/scottishPremiership" className='li'>
+            <img className='flags'  src='/vectors/scottish_flag.svg' alt="" />
+            <p>SC1</p>
           </Link></li>
           <li><Link to="/spanishLaLiga2" className='li'>
             <img className='flags'  src='/vectors/spanish_flag.svg' alt="" />
