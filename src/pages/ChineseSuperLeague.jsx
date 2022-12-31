@@ -229,7 +229,7 @@ console.log(oversStrat1);
       <button className='button'>Submit</button>
     </form>
     <div className='scorelines'>
-      Secondhalf Strategy Scorelines = 1-0, 0-1, 2-0, 0-2
+      Secondhalf Strategy Scorelines = 1-0, 0-1, 0-2
     </div>
     
     </>

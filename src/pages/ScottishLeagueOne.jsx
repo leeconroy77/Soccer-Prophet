@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import Select from 'react-select';
-import {EnglishLeagueOneDirectory} from '../directories/Directory.englishLeagueOne';
+import {ScottishLeagueOneDirectory} from '../directories/Directory.scottishLeagueOne';
 import '../index.css'
 
-const EnglishLeagueOne = () => {
+const ScottishLeagueOne = () => {
 
-  const leagueName = EnglishLeagueOneDirectory
+  const leagueName = ScottishLeagueOneDirectory
 
   const formaton = [
     {value: "4231", label: "4231"}, {value: "442",label: "442"}, {value: "433", label: "433"}, {value: "451", label: "451"},{value: "352", label: "352"},{value: "343", label: "343"},{value: "532", label: "532"},{value: "541", label: "541"},
   ];
 
-  const EnglishLeagueOneTeams = [
-    {value: "Accrington", label: "Accrington"}, {value: "Barnsley",label: "Barnsley"}, {value: "Bolton", label: "Bolton"}, {value: "Bristol Rovers", label: "Bristol Rovers"}, {value: "Burton",label: "Burton"}, {value: "Cambridge Utd",label: "Cambridge Utd"}, {value: "Charlton",label: "Charlton"}, {value: "Cheltenham",label: "Cheltenham"}, {value: "Derby",label: "Derby"}, {value: "Exeter",label: "Exeter"},  {value: "Fleetwood",label: "Fleetwood"},{value: "Forest Green",label: "Forest Green"}, {value: "Ipswich",label: "Ipswich"},{value: "Lincoln",label: "Lincoln"},{value: "Morecambe",label: "Morecambe"}, {value: "MK Dons",label: "MK Dons"},{value: "Oxford Utd",label: "Oxford Utd"}, {value: "Peterborough",label: "Peterborough"}, {value: "Plymouth",label: "Plymouth"},{value: "Portsmouth",label: "Portsmouth"},{value: "Port Vale",label: "Port Vale"}, {value: "Sheff Wed",label: "Sheff Wed"}, {value: "Shrewsbury",label: "Shrewsbury"}, {value: "Wycombe",label: "Wycombe"}
+  const ScottishLeagueOneTeams = [
+    {value: "Airdrieonians", label: "Airdrieonians"}, {value: "Alloa", label: "Alloa"}, {value: "Clyde",label: "Clyde"}, {value: "Dunfermline", label: "Dunfermline"}, {value: "Falkirk", label: "Falkirk"}, {value: "FC Edinburgh",label: "FC Edinburgh"},
+     {value: "Kelty Hearts",label: "Kelty Hearts"}, {value: "Montrose",label: "Montrose"},{value: "Peterhead",label: "Peterhead"},{value: "Queen of the South",label: "Queen of the South"}
   ]
 
 
@@ -85,6 +86,10 @@ const [totalAvgAwayGoalsSecondHalfFormation125, setTotalAvgAwayGoalsSecondHalfFo
 
   const handleSubmit = (e) => { 
     e.preventDefault();
+
+
+
+
 
 // /// LTD //////////
 
@@ -221,7 +226,7 @@ handleClickAwayformationLtdConceded()
       console.log(avgHomeGoalsFormation);
       
       
-      let avgHomeGoalsFiltered = avgHomeGoalsFormation.filter((el, i) => i < 4)
+      let avgHomeGoalsFiltered = avgHomeGoalsFormation.filter((el, i) => i < 2)
       totalAvgHomeGoalsFormationOvers = avgHomeGoalsFiltered.reduce((a, b) => a + b, 0) / avgHomeGoalsFiltered.length
     setTotalAvgHomeGoalsFormationOvers(totalAvgHomeGoalsFormationOvers)
       console.log(`totalAvgHomeGoalsFormation = ${totalAvgHomeGoalsFormationOvers}`);
@@ -246,7 +251,7 @@ handleClickAwayformationLtdConceded()
       console.log(avgHomeGoalsFormation);
       
       
-      let avgHomeGoalsFiltered = avgHomeGoalsFormation.filter((el, i) => i < 4)
+      let avgHomeGoalsFiltered = avgHomeGoalsFormation.filter((el, i) => i < 2)
       totalAvgHomeConcededFormationOvers = avgHomeGoalsFiltered.reduce((a, b) => a + b, 0) / avgHomeGoalsFiltered.length
       setTotalAvgHomeConcededFormationOvers(totalAvgHomeConcededFormationOvers)
       console.log(`totalAvgHomeConcededFormation125 = ${totalAvgHomeConcededFormationOvers}`);
@@ -274,7 +279,7 @@ handleClickAwayformationLtdConceded()
       console.log(avgAwayGoalsFormation);
       
       
-      let avgAwayGoalsFiltered = avgAwayGoalsFormation.filter((el, i) => i < 4)
+      let avgAwayGoalsFiltered = avgAwayGoalsFormation.filter((el, i) => i < 2)
       totalAvgAwayGoalsFormationOvers = avgAwayGoalsFiltered.reduce((a, b) => a + b, 0) / avgAwayGoalsFiltered.length
       setTotalAvgAwayGoalsFormationOversSh(totalAvgAwayGoalsFormationOvers)
       console.log(`totalAvgAwayGoalsFormation = ${totalAvgHomeConcededFormationOversSh}`);
@@ -300,7 +305,7 @@ handleClickAwayformationLtdConceded()
       console.log(avgAwayGoalsFormation);
       
       
-      let avgAwayGoalsFiltered = avgAwayGoalsFormation.filter((el, i) => i < 4)
+      let avgAwayGoalsFiltered = avgAwayGoalsFormation.filter((el, i) => i < 2)
       totalAvgAwayConcededFormationOvers = avgAwayGoalsFiltered.reduce((a, b) => a + b, 0) / avgAwayGoalsFiltered.length
       setTotalAvgAwayConcededFormationOvers(totalAvgAwayConcededFormationOvers)
       console.log(`totalAvgAwayConcededFormation125 = ${totalAvgAwayConcededFormationOvers}`);
@@ -337,7 +342,7 @@ const handleClickHomeformationOversSh = (e) => {
     console.log(avgHomeGoalsFormation);
     
     
-    let avgHomeGoalsFiltered = avgHomeGoalsFormation.filter((el, i) => i < 4)
+    let avgHomeGoalsFiltered = avgHomeGoalsFormation.filter((el, i) => i <2)
     totalAvgHomeGoalsFormationOversSh = avgHomeGoalsFiltered.reduce((a, b) => a + b, 0) / avgHomeGoalsFiltered.length
   setTotalAvgHomeGoalsFormationOversSh(totalAvgHomeGoalsFormationOversSh)
     console.log(`totalAvgHomeGoalsFormationOversSh = ${totalAvgHomeGoalsFormationOversSh}`);
@@ -365,7 +370,7 @@ const handleClickHomeformationOversConcededSh = (e) => {
     console.log(avgHomeGoalsFormation);
     
     
-    let avgHomeGoalsFiltered = avgHomeGoalsFormation.filter((el, i) => i < 4)
+    let avgHomeGoalsFiltered = avgHomeGoalsFormation.filter((el, i) => i < 2)
     totalAvgHomeConcededFormationOversSh = avgHomeGoalsFiltered.reduce((a, b) => a + b, 0) / avgHomeGoalsFiltered.length
     setTotalAvgHomeConcededFormationOversSh(totalAvgHomeConcededFormationOversSh)
     console.log(`totalAvgHomeConcededFormationOversSh = ${totalAvgHomeConcededFormationOversSh}`);
@@ -393,7 +398,7 @@ const handleClickAwayformationOversSh = (e) => {
     console.log(avgAwayGoalsFormation);
     
     
-    let avgAwayGoalsFiltered = avgAwayGoalsFormation.filter((el, i) => i < 4)
+    let avgAwayGoalsFiltered = avgAwayGoalsFormation.filter((el, i) => i < 2)
     totalAvgAwayGoalsFormationOversSh = avgAwayGoalsFiltered.reduce((a, b) => a + b, 0) / avgAwayGoalsFiltered.length
     setTotalAvgAwayGoalsFormationOvers(totalAvgAwayGoalsFormationOversSh)
     console.log(`totalAvgAwayGoalsFormationOversSh = ${totalAvgAwayGoalsFormationOversSh}`);
@@ -419,7 +424,7 @@ const handleClickAwayformationOversConcededSh = (e) => {
     console.log(avgAwayGoalsFormation);
     
     
-    let avgAwayGoalsFiltered = avgAwayGoalsFormation.filter((el, i) => i < 4)
+    let avgAwayGoalsFiltered = avgAwayGoalsFormation.filter((el, i) => i < 2)
     totalAvgAwayConcededFormationOversSh = avgAwayGoalsFiltered.reduce((a, b) => a + b, 0) / avgAwayGoalsFiltered.length
     setTotalAvgAwayConcededFormationOversSh(totalAvgAwayConcededFormationOversSh)
     console.log(`totalAvgAwayConcededFormationOversSh = ${totalAvgAwayConcededFormationOversSh}`);
@@ -527,7 +532,7 @@ let averageSeondHalfBothTeamsSecondHalfOvers = (totalAvgHomeGoalsSecondHalfForma
 
 if (isNaN(homeStrengthLtd) || isNaN(awayStrengthLtd)) {
   ltdStrat = false
-} if ((homeStrengthLtd > 1.24) && (homeStrengthLtd < 2.51) && ((awayStrengthLtd > 0.49)) &&(awayStrengthLtd < 3.3)) {
+} if ((homeStrengthLtd > 0.99) && (homeStrengthLtd < 3.01) && ((awayStrengthLtd > 0.5)) &&(awayStrengthLtd < 2.51)) {
   ltdStrat = true
 }
 
@@ -539,7 +544,7 @@ if (isNaN(homeStrengthLtd) || isNaN(awayStrengthLtd)) {
 
 if (isNaN(homeStrengthOvers) || isNaN(awayStrengthOvers)) {
   oversStrat = false
-} if ((homeStrengthOvers > 1.24) && (homeStrengthOvers < 2.3) && ((awayStrengthOvers > 1.1)) &&(awayStrengthOvers < 1.51)) {
+} if ((homeStrengthOvers > 0.99) && (homeStrengthOvers < 3) && ((awayStrengthOvers > 0.5)) &&(awayStrengthOvers < 2.51)) {
   oversStrat = true
 }
  
@@ -549,7 +554,7 @@ if (isNaN(homeStrengthOvers) || isNaN(awayStrengthOvers)) {
 
 if (isNaN(homeSecondHalfOvers) || isNaN(awaySecondHalfOvers)) {
   secondHalfStrat = false
-} if ((homeSecondHalfOvers > 0.99) && (homeSecondHalfOvers < 2.01) && (awaySecondHalfOvers > 0.49) &&(awaySecondHalfOvers < 3.01)  && (totalAvgHomeGoalsSecondHalfFormation125 > 1.2)&& (totalAvgHomeGoalsSecondHalfFormation125 < 3.01) && (totalAvgAwayGoalsSecondHalfFormation125 > 1.1) && (totalAvgAwayGoalsSecondHalfFormation125 < 2.7)) {
+} if ((homeSecondHalfOvers > 0.99) && (homeSecondHalfOvers < 3.01) && (awaySecondHalfOvers > 0.5) &&(awaySecondHalfOvers < 2.5)  && (totalAvgHomeGoalsSecondHalfFormation125 > 0.49)&& (totalAvgHomeGoalsSecondHalfFormation125 < 2.51) && (totalAvgAwayGoalsSecondHalfFormation125 > 0.99) && (totalAvgAwayGoalsSecondHalfFormation125 < 3.51)) {
   secondHalfStrat = true
 
 }
@@ -566,9 +571,9 @@ console.log(secondHalfStrat);
     <form action="submit" onClick={handleSubmit}>
       <div className='form-container'>
         <div className="form-items" >
-          <Select options={EnglishLeagueOneTeams} onChange={handleHomeTeamChange1} className="team-input" placeholder="Home Team" />
+          <Select options={ScottishLeagueOneTeams} onChange={handleHomeTeamChange1} className="team-input" placeholder="Home Team" />
           <Select options={formaton} onChange={handleHomeFormationChange1} className="formation-input" placeholder="Formation"/>
-          <Select options={EnglishLeagueOneTeams} onChange={handleAwayTeamChange1} className="team-input" placeholder="Away Team"/>
+          <Select options={ScottishLeagueOneTeams} onChange={handleAwayTeamChange1} className="team-input" placeholder="Away Team"/>
           <Select options={formaton} onChange={handleAwayFormationChange1} className="formation-input" placeholder="Formation"/>
           <div className='strategies'>
           {ltdStrat && <div className='ltd'>LTD</div>}
@@ -590,4 +595,4 @@ console.log(secondHalfStrat);
   )
 }
 
-export default EnglishLeagueOne
+export default ScottishLeagueOne
